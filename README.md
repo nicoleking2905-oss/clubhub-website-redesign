@@ -2,12 +2,16 @@
 
 Static HTML, CSS and a little JavaScript. No build step: upload the folder as it is.
 
-| Page | File | Built from |
-| --- | --- | --- |
-| Homepage | `index.html` | `project/Homepage A - Clubhouse.dc.html` |
-| Sign in | `sign-in.html` | `project/Sign In.dc.html` |
-| Create your club | `create-your-club.html` | `project/Create Your Club.dc.html` |
-| Privacy policy | `privacy.html` | `project/Privacy.dc.html` |
+Live site: https://nicoleking2905-oss.github.io/clubhub-website-redesign/
+
+| Page | File |
+| --- | --- |
+| Homepage | `index.html` |
+| Sign in | `sign-in.html` |
+| Create your club | `create-your-club.html` |
+| Privacy policy | `privacy.html` |
+
+The pages were built from the "ClubHub homepage redesign" project in Claude Design (the Clubhouse direction).
 
 - `css/styles.css`: all styles. Colours and fonts are variables at the top.
 - `js/home.js`: hero phone, price sticker and scroll-in animations.
@@ -17,6 +21,13 @@ Static HTML, CSS and a little JavaScript. No build step: upload the folder as it
 Every animation is skipped when the visitor's device is set to reduce motion. All content still shows if JavaScript is off.
 
 The app screens on the homepage are drawn in HTML, not images. Badges and shirts are SVG symbols at the top of `index.html`, reused with `<use>`.
+
+## Making changes
+
+Every push to `main` republishes the live site through GitHub Pages within a minute or two.
+
+- **Small wording fixes** (a typo, a price, an email address): open the file on GitHub, click the pencil icon, edit the text and commit.
+- **Design changes** (new sections, layout, new app screens): make them in Claude Design, hand them off to Claude Code, and ask it to apply them to `nicoleking2905-oss/clubhub-website-redesign` and push to `main`. The site here is a separate build of the design, so changes in Claude Design don't reach it on their own.
 
 ## Before going live
 
