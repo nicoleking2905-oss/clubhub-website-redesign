@@ -156,7 +156,7 @@ input::placeholder { color: #6B7D79; }
   cursor: pointer;
 }
 .btn-submit:hover { background: var(--teal-dark); }
-.btn-submit.lift { transition: transform .15s ease, background-color .15s ease, box-shadow .15s ease; }
+.btn-submit.lift { transition: transform .15s ease, background-color .15s ease, color .15s ease, box-shadow .15s ease; }
 .btn-submit.lift:hover { transform: translateY(-2px); box-shadow: var(--lift-shadow); }
 .btn-submit.lift:active { transform: scale(.97); box-shadow: none; }
 .btn-submit--outline { width: 100%; border: 2px solid var(--ink); background: #fff; color: var(--ink); }
@@ -794,3 +794,41 @@ input::placeholder { color: #6B7D79; }
 .doc-section + .doc-section--contact { border-top: none; padding-top: clamp(22px, 4cqi, 32px); }
 .doc-section--contact h2 span { color: var(--yellow); }
 .doc-section--contact a { color: #fff; font-weight: 700; word-break: break-all; }
+
+/* =========================================================
+   Hover, press and focus states (from the design handoff's hover-states.css,
+   mapped to this site's classes). Button hovers live with the buttons above.
+   ========================================================= */
+
+a, button { transition: color .15s ease, background-color .15s ease, opacity .15s ease, transform .15s ease, box-shadow .15s ease; }
+
+/* Header logo and wordmark */
+.brand:hover { opacity: .75; }
+
+/* Ink text links: header "Pricing" / "Try the demo" */
+.site-nav .nav-plain:hover { color: var(--teal); text-decoration: underline; text-underline-offset: 4px; }
+
+/* Teal text links: header "Sign in" / "Get started", email links, "Or try the demo first", "Trouble signing in?" */
+.site-nav .nav-strong:hover,
+.email-strong:hover,
+.help-email:hover,
+.text-link:hover,
+.doc-section a:hover,
+.trouble:hover { color: var(--ink); text-decoration: underline; text-underline-offset: 4px; }
+
+/* Footer links and Instagram icon */
+.footer-links a:hover { color: #fff; text-decoration: underline; }
+.footer-links .footer-ig:hover { color: #fff; text-decoration: none; }
+
+/* White links on dark or photo backgrounds */
+.doc-section--contact a:hover { color: var(--yellow); }
+
+/* Keyboard focus on every link and button. :where() keeps the 6px radius from
+   overriding elements that set their own (buttons, pills). */
+a:focus-visible, button:focus-visible { outline: 3px solid var(--teal); outline-offset: 3px; }
+:where(a, button):focus-visible { border-radius: 6px; }
+
+@media (prefers-reduced-motion: reduce) {
+  a, button, .btn, .btn-submit.lift { transition: none; }
+  .btn:hover, .btn:active, .btn-submit.lift:hover, .btn-submit.lift:active { transform: none; }
+}
